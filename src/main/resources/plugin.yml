@@ -1,0 +1,10 @@
+name: firstplugintest
+main: io.github.brodude1234.firstplugintest.firstplugintest
+version: 0.0.1
+command:
+  basic:
+    description: This is a basic command.
+    usage: /<command>
+    permission: firstplugintest.basic
+    permission-message: You don't have firstplugintest.basic
+
