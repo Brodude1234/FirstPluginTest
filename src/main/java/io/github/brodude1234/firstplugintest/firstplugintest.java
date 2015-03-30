@@ -18,6 +18,7 @@ public final class firstplugintest extends JavaPlugin {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("basic")) {
             getLogger().info("The basic command has successfully run! Hooray!");
+            sender.sendMessage("You run dat command! My name's Jeff!");
             return true;
         }
         return false;

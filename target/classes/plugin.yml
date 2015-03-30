@@ -8,4 +8,5 @@ commands:
     usage: /<command>
     permission: firstplugintest.basic
     permission-message: You don't have firstplugintest.basic
+    default: true
 
