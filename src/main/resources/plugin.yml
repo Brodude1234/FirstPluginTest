@@ -1,7 +1,8 @@
 name: firstplugintest
 main: io.github.brodude1234.firstplugintest.firstplugintest
 version: 0.0.1
-command:
+description: An awesome plugin.
+commands:
   basic:
     description: This is a basic command.
     usage: /<command>
