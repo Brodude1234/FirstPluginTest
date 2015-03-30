@@ -15,11 +15,6 @@ public final class firstplugintest extends JavaPlugin {
     }
 
     @Override
-    public void onDisable() {
-        getLogger().info("The firstplugintest plugin onDisable has been invoked!");
-    }
-
-    @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("basic")) {
             getLogger().info("The basic command has successfully run! Hooray!");
@@ -27,4 +22,10 @@ public final class firstplugintest extends JavaPlugin {
         }
         return false;
     }
+
+    @Override
+    public void onDisable() {
+        getLogger().info("The firstplugintest plugin onDisable has been invoked!");
+    }
+
 }
