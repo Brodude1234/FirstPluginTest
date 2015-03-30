@@ -5,8 +5,14 @@ description: An awesome plugin.
 commands:
   basic:
     description: This is a basic command.
-    usage: /<command>
+    usage: /basic
     permission: firstplugintest.basic
     permission-message: You don't have firstplugintest.basic
+    default: true
+  ignite:
+    description: Fire!!!
+    usage: /ignite <player>
+    permission: firstplugintest.ignite
+    permission-message: You don't have firstplugintest.ignite
     default: true
 
