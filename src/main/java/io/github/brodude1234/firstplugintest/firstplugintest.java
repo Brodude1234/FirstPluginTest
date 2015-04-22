@@ -5,7 +5,9 @@ package io.github.brodude1234.firstplugintest;
  */
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -49,7 +51,8 @@ public final class firstplugintest extends JavaPlugin {
                 victimName = target1.getName();
 
                 target.setFireTicks(100);
-                target.sendMessage("You might need a band-aid because you just got BURNED!");
+                target.sendMessage("You might need a water bucket because you just got BURNED!");
+                target.getInventory().addItem(new ItemStack(Material.WATER_BUCKET,1));
                 getLogger().info(senderName + " just burned " + victimName + "! He is evil!");
                 return true;
 
