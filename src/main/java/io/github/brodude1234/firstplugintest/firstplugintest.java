@@ -24,6 +24,7 @@ public final class firstplugintest extends JavaPlugin {
             return true;
         } else {
             if (cmd.getName().equalsIgnoreCase("ignite")) {
+
                 if (args.length != 1) {
                     return false;
                 }
@@ -38,9 +39,18 @@ public final class firstplugintest extends JavaPlugin {
                     return true;
                 }
 
+                Player player = (Player)sender;
+                Player target1 = Bukkit.getServer().getPlayer(args[0]);
+
+                String senderName;
+                String victimName;
+
+                senderName = sender.getName();
+                victimName = target1.getName();
+
                 target.setFireTicks(100);
                 target.sendMessage("You might need a band-aid because you just got BURNED!");
-                getLogger().info(sender + " just burned " + target + "! He is evil!");
+                getLogger().info(senderName + " just burned " + victimName + "! He is evil!");
                 return true;
 
             }
