@@ -34,11 +34,13 @@ public final class firstplugintest extends JavaPlugin {
                 Player target = Bukkit.getServer().getPlayer(args[0]);
 
                 if (target == null) {
-                    sender.sendMessage(args[0] + "is not online. Sucked in!");
+                    sender.sendMessage(args[0] + " is not online. Sucked in!");
                     return true;
                 }
 
                 target.setFireTicks(100);
+                target.sendMessage("You might need a band-aid because you just got BURNED!");
+                getLogger().info(sender + " just burned " + target + "! He is evil!");
                 return true;
 
             }
