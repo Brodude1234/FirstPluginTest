@@ -22,30 +22,26 @@ public final class firstplugintest extends JavaPlugin {
             getLogger().info("The basic command has successfully run! Hooray!");
             sender.sendMessage("You run dat command! My name's Jeff!");
             return true;
-        }
-        return false;
-    }
+        } else {
+            if (cmd.getName().equalsIgnoreCase("ignite")) {
+                if (args.length != 1) {
+                    return false;
+                }
+                if (!(sender instanceof Player)) {
+                    sender.sendMessage("You can't hurt people if they cant hurt you! Meanie!");
+                }
 
-    @Override
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (cmd.getName().equalsIgnoreCase("ignite")) {
-          if (args.length != 1) {
-              return false;
-          }
-          if (!(sender instanceof Player)){
-            sender.sendMessage("You can't hurt people if they cant hurt you! Meanie!");
-          }
+                Player target = Bukkit.getServer().getPlayer(args[0]);
 
-          Player target = Bukkit.getServer().getPlayer(args[0]);
+                if (target == null) {
+                    sender.sendMessage(args[0] + "is not online. Sucked in!");
+                    return true;
+                }
 
-          if (target == null) {
-              sender.sendMessage(args[0] + "is not online. Sucked in!");
-              return true;
-          }
+                target.setFireTicks(100);
+                return true;
 
-            target.setFireTicks("100");
-            return true;
-
+            }
         }
         return false;
     }
