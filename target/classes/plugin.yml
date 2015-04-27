@@ -15,4 +15,10 @@ commands:
     permission: firstplugintest.ignite
     permission-message: You don't have firstplugintest.ignite
     default: true
+  fall:
+    description: AAAAH!
+    usage: /fall
+    permission: firstplugintest.fall
+    permission-message: You don't have firstplugintest.fall
+    default: true
 

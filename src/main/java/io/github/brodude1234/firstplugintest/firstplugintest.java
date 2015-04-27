@@ -66,11 +66,20 @@ public final class firstplugintest extends JavaPlugin {
                  String tpplayername;
                  tpplayername = sender.getName();
 
-                 tpplayer.teleport(new Location(tpplayer.getWorld(), 0, 1000, 0));
+                 if (args.length != 0) {
+                     return false;
+                 }
+
+                 if (!(sender instanceof Player)) {
+                     sender.sendMessage("Console can't fall!");
+                 }
+
+                 tpplayer.teleport(new Location(tpplayer.getWorld(), -15, 1000, -15));
                  tpplayer.sendMessage("Your doom has arrived!");
                  tpplayer.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 1200, 5, true, true));
                  tpplayer.sendMessage("Bit scared?");
                  getLogger().info(tpplayername + "is falling to their doom! Yay!");
+                 return true;
              }
             }
         }
