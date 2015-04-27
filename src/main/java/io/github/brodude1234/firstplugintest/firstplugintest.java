@@ -11,6 +11,10 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.Location;
+import org.bukkit.World;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public final class firstplugintest extends JavaPlugin {
     @Override
@@ -56,6 +60,18 @@ public final class firstplugintest extends JavaPlugin {
                 getLogger().info(senderName + " just burned " + victimName + "! He is evil!");
                 return true;
 
+            } else{
+             if (cmd.getName().equalsIgnoreCase("fall")) {
+                 Player tpplayer = (Player)sender;
+                 String tpplayername;
+                 tpplayername = sender.getName();
+
+                 tpplayer.teleport(new Location(tpplayer.getWorld(), 0, 1000, 0));
+                 tpplayer.sendMessage("Your doom has arrived!");
+                 tpplayer.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 1200, 5, true, true));
+                 tpplayer.sendMessage("Bit scared?");
+                 getLogger().info(tpplayername + "is falling to their doom! Yay!");
+             }
             }
         }
         return false;
